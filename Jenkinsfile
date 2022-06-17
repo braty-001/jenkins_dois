@@ -1,17 +1,15 @@
-peline { 
-    agent any 
-
-    stages { 
-        stage('STAGE 00'){ 
-            steps{
-                echo "Pipeline Usando Jenkinsfile"
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
             }
         }
-
-        stage('STAGE 01'){ 
-            steps{
-                echo "Pipeline Usando Jenkinsfile"
-            }
-        } 
-    } 
-} 
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
+}
